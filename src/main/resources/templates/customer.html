@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- CSS INCLUDE  -->
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	intergrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous"></link>
+
+<!-- EOF CSS INCLUDE -->
+
+</head>
+<body>
+	<!-- START PAGE CONTAINER -->
+	<div class="container-fluid">
+		<!-- PAGE TITLE -->
+		<h2>Date Validation</h2>
+
+	</div>
+	<!-- END PAGE TITLE -->
+	<div class="column">
+		<form action="#" th:action="@{/customer}" th:object="${customer}"
+			method="post">
+			<table>
+				<tr>
+					<td>Start Date:</td>
+					<td><input type="text" th:field="*{fromDate}" /></td>
+					<td th:if="${#fields.hasErrors('fromDate')}"
+						th:errors="*{fromDate}" th:style="'color:red'"></td>
+				</tr>
+
+				<tr>
+					<td>End Date:</td>
+					<td><input type="text" th:field="*{toDate}" /></td>
+					<td th:if="${#fields.hasErrors('toDate')}" th:errors="*{toDate}"
+						th:style="'color:red'"></td>
+				</tr>
+
+				<tr>
+					<td>Date Difference:&nbsp;</td>
+					<td><label th:text="*{dateDiff}" /></label> &nbsp;&nbsp;&nbsp;Days</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit" class="btn btn-primary">Confirm</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<!-- END PAGE CONTAINER -->
+	</div>
+	<script scr="https://code.jquery.com/jquery-1.11.1.min.js"
+		intergrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE="
+		crossorigin="anonymous"></script>
+
+	<script
+		scr="maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		intergrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7L2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+</body>
+</html>
